@@ -1,16 +1,3 @@
-// Test JS in Br
-// console.log("Up and running!");
-
-// let cardOne = "Queen";
-// let cardTwo = "Queen";
-// let cardThree = "King";
-// let cardFour = "King";
-// ^^ told to delete via exercise ^^
-
-// Test JS in Br
-// console.log("User flipped " + cardOne);
-// console.log("User flipped " + cardThree);
-
 let cards = ["Queen", "Queen", "King", "King"];
 // The user's current selection/hand
 let cardsInPlay = [];
@@ -33,3 +20,15 @@ if (cardsInPlay.length === 2) {
 		alert("Sorry, try again.");
 	}
 }
+
+/*
+ Updates to game logic:
+
+1) Create func to store steps for selecting a card
+** When a card is selected by user, that card 
+is added to add array cardsInPlay.
+
+2) New func to group together the logic 
+checking for card match. This will prompt the
+results to user.
+*/

@@ -23,7 +23,9 @@ let cards = [
 ];
 // The user's current selection/hand
 let cardsInPlay = [];
-// 
+
+
+
 function checkForMatch() {
 	if (cardsInPlay[0] === cardsInPlay[1]) {
 		alert("You found a match!");
@@ -31,27 +33,33 @@ function checkForMatch() {
 		alert("Sorry, try again.");
 	}
 }
-function flipCard(cardId) {
+
+
+
+function flipCard() {
+	// Store "data-id" in cardId
+	let cardId = this.getAttribute("data-id");
 	console.log("User flipped " + cards[cardId].rank);
 	cardsInPlay.push(cards[cardId].rank);
 	console.log(cards[cardId].cardImage);
 	console.log(cards[cardId].suit);
+	// Set the clicked card img to correct img src
+	this.setAttribute("src", cards[cardId].cardImage);
 	if (cardsInPlay.length === 2) {
 		checkForMatch();
 	}
 }
 
-flipCard(0);
-flipCard(2);
 
-/*
- Updates to game logic:
 
-1) Create func to store steps for selecting a card
-** When a card is selected by user, that card 
-is added to add array cardsInPlay.
+function createBoard() {
+	for (let i = 0; i < cards.length; i++) {
+		let cardElement = document.createElement("img");
+		cardElement.setAttribute("src", "images/back.png");
+		cardElement.setAttribute("data-id", i);
+		cardElement.addEventListener("click", flipCard);
+		document.getElementById("game-board").appendChild(cardElement);
+	};
+}
 
-2) New func to group together the logic 
-checking for card match. This will prompt the
-results to user.
-*/
+createBoard();

@@ -31,7 +31,7 @@ function checkForMatch() {
 		alert("You found a match!");
 	} else {
 		alert("Sorry, try again.");
-	}
+	};
 }
 
 
@@ -47,7 +47,7 @@ function flipCard() {
 	this.setAttribute("src", cards[cardId].cardImage);
 	if (cardsInPlay.length === 2) {
 		checkForMatch();
-	}
+	};
 }
 
 
@@ -63,3 +63,19 @@ function createBoard() {
 }
 
 createBoard();
+
+// let resentEvent = document.getElementById("resetButton");
+// resetEvent.addEventListener
+
+
+/*
+	Add HTML button
+	Style with CSS
+	Create event in JS file that resets game after
+		playing (when button clicked)
+	-----
+	Create a clearBoard function
+	Then call createBoard
+	call cardElement and correct img, don't call flipboard?
+	Embed createBoard() into new function?
+*/
